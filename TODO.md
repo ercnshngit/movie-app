@@ -3,7 +3,7 @@ Web
 [X] Proje React veya Angular8+ frameworklerinden biri ile geliştirilmeli
 [X] Paket yöneticisi olarak Yarn kullanılmalı
 [X] Ekranlar arası geçiş için React Router Dom kütüphanesi kullanılmalı
-[] Frontend responsive (mobil/küçük ekran destekli) olmalı
+[X] Frontend responsive (mobil/küçük ekran destekli) olmalı
 [] Proje build alınarak Heroku/Netlify/Surge birine deploy edilmeli
 
 İş gereksinimleri:
