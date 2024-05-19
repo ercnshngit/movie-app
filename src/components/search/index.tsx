@@ -8,9 +8,10 @@ import {
   useSubmit,
 } from "react-router-dom";
 import { Input } from "../ui/input";
+import { useAllSearchParams } from "@/hooks/search-params";
 
 export default function Search() {
-  let [searchParams, _] = useSearchParams();
+  let { allParams } = useAllSearchParams();
 
   // submit hook is used to submit the form on every change
   const submit = useSubmit();
@@ -18,7 +19,7 @@ export default function Search() {
   // navigation hook is used to get the current navigation state (e.g. form submit, data loading, etc.)
   const navigation = useNavigation();
 
-  let q = searchParams.get("q") || "";
+  let q = allParams.q || "";
 
   // Check if the user is currently searching
   // This is used to show the loading spinner
@@ -56,7 +57,10 @@ export default function Search() {
             )
               return;
             // Update search query on every change
-            submit(event.currentTarget.form);
+            submit({
+              ...allParams,
+              q: event.target.value,
+            });
           }}
         />
         <Loader

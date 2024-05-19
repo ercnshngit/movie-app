@@ -9,9 +9,9 @@ Web
 İş gereksinimleri:
 
 [X] Anasayfada 2 başlık bulunmaktadır. Seçilen başlığa göre listeleme ekranına yönlendirme yapılmalıdır.
-[] Listeleme ekranında filtreleme işlemi yapılmadıysa ilk 18 veri gösterilmelidir.
-[] Arama input’una 3 karakter girilince tüm veri üzerinde filtreleme işlemi yapılabilmeli
-[] Dropdown ile tüm veri üzerinden sıralama işlemi yapılabilmeli
+[X] Listeleme ekranında filtreleme işlemi yapılmadıysa ilk 18 veri gösterilmelidir.
+[X] Arama input’una 3 karakter girilince tüm veri üzerinde filtreleme işlemi yapılabilmeli
+[X] Dropdown ile tüm veri üzerinden sıralama işlemi yapılabilmeli
 [X] Proje kodu Github’a yüklenmeli
 
 İpuçları:
@@ -21,6 +21,6 @@ Web
 
 Bonus:
 
-[] Component yapısına dikkat edilmesi, kod tekrarının yapılmaması
-[] Değişken isimlendirilmesine dikkat edilmesi, koda yorumlar eklenmesi
+[X] Component yapısına dikkat edilmesi, kod tekrarının yapılmaması
+[X] Değişken isimlendirilmesine dikkat edilmesi, koda yorumlar eklenmesi
 [X] Proje geliştirme sürecinde git kullanıp, bu süreçte commit geçmişinizin bulunması
