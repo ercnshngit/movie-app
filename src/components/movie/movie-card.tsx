@@ -1,7 +1,6 @@
-import { Card } from "@/components/ui/card";
+import { Image } from "@/components/image";
 import { cn } from "@/lib/utils";
 import { Movie } from "@/types/movies";
-import { Image } from "@/components/image";
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   let title = movie.title || "No title";
