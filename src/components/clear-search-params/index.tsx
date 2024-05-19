@@ -11,7 +11,7 @@ export default function ClearSearchParams() {
   };
 
   // If there are no search params, return null
-  if (Object.keys(searchParams).length === 0) return null;
+  if (Array.from(searchParams.entries()).length === 0) return null;
 
   return (
     <Button
