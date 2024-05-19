@@ -1,3 +1,9 @@
+import { Link } from "react-router-dom";
+
 export default function Logo() {
-  return <h1 className="text-xl font-semibold">BulutMD</h1>;
+  return (
+    <Link to="/" className="text-2xl font-bold">
+      BulutMD
+    </Link>
+  );
 }
