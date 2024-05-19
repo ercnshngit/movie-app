@@ -2,25 +2,21 @@ export const ORDER = [
   {
     label: "Yeniye Göre Sırala",
     slug: "newest",
-    column: "releaseYear",
-    direction: "desc",
+    sort: (a, b) => b.releaseYear - a.releaseYear,
   },
   {
     label: "Eskiyi Göre Sırala",
     slug: "oldest",
-    column: "releaseYear",
-    direction: "asc",
+    sort: (a, b) => a.releaseYear - b.releaseYear,
   },
   {
     label: "İsme Göre Sırala (A-Z)",
     slug: "name",
-    column: "title",
-    direction: "asc",
+    sort: (a, b) => a.title.localeCompare(b.title),
   },
   {
     label: "İsme Göre Sırala (Z-A)",
     slug: "name-desc",
-    column: "title",
-    direction: "desc",
+    sort: (a, b) => b.title.localeCompare(a.title),
   },
 ];
