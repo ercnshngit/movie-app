@@ -9,10 +9,12 @@ import {
 } from "@/components/ui/select";
 import { ORDER } from "@/constants/order";
 import { useAllSearchParams } from "@/hooks/search-params";
+import { useEffect, useState } from "react";
 import { Form, useSubmit } from "react-router-dom";
 
 export default function Sort() {
   let { allParams } = useAllSearchParams();
+  let order = allParams.order;
 
   // submit hook is used to submit the form on every change
   const submit = useSubmit();
@@ -22,9 +24,18 @@ export default function Sort() {
     submit({ ...allParams, order: value });
   };
 
+  console.log(allParams);
+
+  const [defaultOrder, setDefaultOrder] = useState(order);
+  useEffect(() => {
+    if (defaultOrder !== order) {
+      setDefaultOrder(order);
+    }
+  }, [order]);
+
   return (
     <Form id="order-form" role="order">
-      <Select onValueChange={handleSortChange}>
+      <Select onValueChange={handleSortChange} value={defaultOrder}>
         <SelectTrigger className="w-[180px]">
           <SelectValue placeholder="Sıralama" />
         </SelectTrigger>
