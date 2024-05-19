@@ -1,11 +1,12 @@
 import MovieList from "@/components/movie/movie-list";
+import Toolbar from "@/components/toolbar";
 import { Breadcrumb } from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import { getMovieByType } from "@/services/api/movies";
 import { getTypes } from "@/services/api/types";
 import { Link, useLoaderData, useRouteError } from "react-router-dom";
 
-export async function loader({ params }) {
+export async function loader({ params, request }) {
   if (!params.type) {
     throw new Error("Tip zorunludur.");
   }
@@ -14,8 +15,18 @@ export async function loader({ params }) {
   if (!type) {
     throw new Error("Tip bulunamadı.");
   }
+  let movies = await getMovieByType(params.type);
 
-  let movies = getMovieByType(params.type);
+  const url = new URL(request.url);
+  const q = url.searchParams.get("q");
+
+  // If there is a search query, and it is more than 2 characters
+  if (q && q.length > 2) {
+    movies = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(q.toLowerCase())
+    );
+  }
+
   return { type, movies };
 }
 
@@ -27,7 +38,9 @@ export default function ListingPage() {
       <Breadcrumb>
         <h2 className="text-lg">{type.name}</h2>
       </Breadcrumb>
-      <div className="container mx-auto py-10">
+
+      <div className="container mx-auto py-10 flex flex-col  gap-10">
+        <Toolbar />
         <MovieList movies={movies} />
       </div>
     </>
