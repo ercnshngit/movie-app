@@ -7,31 +7,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { cn } from "@/lib/utils";
-import { Loader } from "lucide-react";
-import { useEffect } from "react";
-import {
-  Form,
-  useNavigation,
-  useSearchParams,
-  useSubmit,
-} from "react-router-dom";
-import { Input } from "../ui/input";
 import { ORDER } from "@/constants/order";
+import { useAllSearchParams } from "@/hooks/search-params";
+import { Form, useSubmit } from "react-router-dom";
 
 export default function Sort() {
-  let [searchParams, _] = useSearchParams();
+  let { allParams } = useAllSearchParams();
 
   // submit hook is used to submit the form on every change
   const submit = useSubmit();
 
   const handleSortChange = (value: string) => {
-    let allParams = searchParams.entries();
-    allParams = Array.from(allParams).reduce((acc, [key, value]) => {
-      acc[key] = value;
-      return acc;
-    }, {});
-
     // Update the search query with the selected order
     submit({ ...allParams, order: value });
   };
