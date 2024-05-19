@@ -6,3 +6,11 @@ export function getMovies() {
 
   return data;
 }
+
+export function getMovieByType(type: string) {
+  const data = MOVIES.entries.filter((movie) => {
+    return movie.programType === type;
+  });
+
+  return data;
+}
