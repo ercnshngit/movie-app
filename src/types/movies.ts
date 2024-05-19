@@ -4,9 +4,11 @@ export type Movie = {
   title: string;
   description: string;
   programType: "movie" | "series";
-  images: Record<string, Image>;
+  images: Record<ImageType, Image>;
   releaseYear: number;
 };
+
+export type ImageType = "Poster Art";
 
 export type Image = { url: string };
 
