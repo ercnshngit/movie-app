@@ -1,9 +1,10 @@
 import { Movie } from "@/types/movies";
 import MovieCard from "./movie-card";
+import { List } from "@/components/ui/list";
 
 export default function MovieList({ movies }: { movies: Movie[] }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-10">
+    <List>
       {movies.length === 0 && (
         <div className="col-span-4 text-center text-lg">
           Bu tipte içerik bulunamadı.
@@ -14,6 +15,6 @@ export default function MovieList({ movies }: { movies: Movie[] }) {
           <MovieCard movie={movie} />
         </div>
       ))}
-    </div>
+    </List>
   );
 }
