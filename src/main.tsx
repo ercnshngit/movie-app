@@ -1,18 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./globals.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Homepage from "./routes/homepage";
 import ListingPage from "./routes/list-page";
+import RootLayout from "./routes/layouts/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
-  },
-  {
-    path: "/list/:type",
-    element: <ListingPage />,
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/list/:type",
+        element: <ListingPage />,
+      },
+    ],
   },
 ]);
 
