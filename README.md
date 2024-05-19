@@ -1,9 +1,21 @@
 # Film Sitesi Örnek
 
+Link: [https://movie-app-dusky-nine.vercel.app/](https://movie-app-dusky-nine.vercel.app/)
+
 ![Example Image](./github-images/site.png)
 ![Responsive Image](./github-images/responsive.png)
 
-# Good to read
+```bash
+$ git clone https://github.com/ercnshngit/movie-app.git
+```
+
+```bash
+$ yarn && yarn run dev
+```
+
+```bash
+http://localhost:5174/
+```
 
 ## Fallback image component
 
