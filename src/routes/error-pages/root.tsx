@@ -10,7 +10,9 @@ export default function RootLayout() {
       <Header />
       <div className="container mx-auto py-10 flex flex-col gap-4 items-start">
         <p className="text-lg mt-4">
-          {error.status + " - " + error.statusText}
+          {(error as unknown as any)?.status +
+            " - " +
+            (error as unknown as any)?.statusText}
         </p>
         <h1 className="text-3xl font-semibold">Sayfa Bulunamadi</h1>
         <Button asChild>

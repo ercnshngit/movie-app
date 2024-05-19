@@ -4,7 +4,7 @@ import { Movie } from "@/types/movies";
 
 export default function MovieCard({ movie }: { movie: Movie }) {
   let title = movie.title || "No title";
-  let description = movie.description || "No description";
+  // let description = movie.description || "No description";
   let programType = movie.programType || "No program type";
   let releaseYear = movie.releaseYear || "No release year";
   let posterImage =

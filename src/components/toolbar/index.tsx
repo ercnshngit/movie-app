@@ -1,7 +1,6 @@
-import React from "react";
+import ClearSearchParams from "../clear-search-params";
 import Search from "../search";
 import Sort from "../sort";
-import ClearSearchParams from "../clear-search-params";
 
 export default function Toolbar() {
   return (

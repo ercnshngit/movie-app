@@ -1,7 +1,6 @@
-import React from "react";
+import { X } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import { Button } from "../ui/button";
-import { X } from "lucide-react";
 
 export default function ClearSearchParams() {
   let [searchParams, setSearchParams] = useSearchParams();

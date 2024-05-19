@@ -9,11 +9,11 @@ import { useSearchParams } from "react-router-dom";
 export function useAllSearchParams() {
   let [searchParams, _] = useSearchParams();
   let allParams = searchParams.entries();
-  allParams = Array.from(allParams).reduce((acc, [key, value]) => {
+  let allParamsObject = Array.from(allParams).reduce((acc, [key, value]) => {
     acc[key] = value;
     return acc;
-  }, {});
+  }, {} as Record<string, string>);
   return {
-    allParams,
+    allParams: allParamsObject,
   };
 }

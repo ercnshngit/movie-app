@@ -11,7 +11,9 @@ export async function loader() {
 }
 
 export default function Homepage() {
-  let { types } = useLoaderData();
+  let { types } = useLoaderData() as {
+    types: typeof TYPE_LIST;
+  };
   return (
     <>
       <Breadcrumb>

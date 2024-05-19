@@ -9,11 +9,10 @@ import {
 } from "@/components/ui/select";
 import { ORDER } from "@/constants/order";
 import { useAllSearchParams } from "@/hooks/search-params";
-import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Form, useSubmit } from "react-router-dom";
 
-export default function Sort({ className }: { className?: string }) {
+export default function Sort() {
   let { allParams } = useAllSearchParams();
   let order = allParams.order || "random";
 
@@ -27,12 +26,8 @@ export default function Sort({ className }: { className?: string }) {
     submit({ ...allParams, order: value });
   };
 
-  console.log(allParams);
-
   const [defaultOrder, setDefaultOrder] = useState(order);
   useEffect(() => {
-    console.log(order);
-
     if (defaultOrder !== order) {
       setDefaultOrder(order);
     }

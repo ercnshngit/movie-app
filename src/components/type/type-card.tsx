@@ -1,7 +1,5 @@
-import { Card } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import { Movie } from "@/types/movies";
 import { Image } from "@/components/image";
+import { cn } from "@/lib/utils";
 import { Type } from "@/types/types";
 import { Link } from "react-router-dom";
 

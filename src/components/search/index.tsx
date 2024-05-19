@@ -1,14 +1,9 @@
+import { useAllSearchParams } from "@/hooks/search-params";
 import { cn } from "@/lib/utils";
 import { Loader } from "lucide-react";
 import { useEffect } from "react";
-import {
-  Form,
-  useNavigation,
-  useSearchParams,
-  useSubmit,
-} from "react-router-dom";
+import { Form, useNavigation, useSubmit } from "react-router-dom";
 import { Input } from "../ui/input";
-import { useAllSearchParams } from "@/hooks/search-params";
 
 export default function Search() {
   let { allParams } = useAllSearchParams();

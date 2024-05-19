@@ -6,9 +6,14 @@ import { ORDER } from "@/constants/order";
 import { getMovieByType } from "@/services/api/movies";
 import { getTypes } from "@/services/api/types";
 import { Movie } from "@/types/movies";
-import { Link, useLoaderData, useRouteError } from "react-router-dom";
+import {
+  Link,
+  LoaderFunctionArgs,
+  useLoaderData,
+  useRouteError,
+} from "react-router-dom";
 
-export async function loader({ params, request }) {
+export async function loader({ params, request }: LoaderFunctionArgs) {
   if (!params.type) {
     throw new Error("Tip zorunludur.");
   }
@@ -19,7 +24,10 @@ export async function loader({ params, request }) {
   }
   let movies = await getMovieByType(params.type);
 
-  const { filtersApplied, items } = applyQueryFilters(movies, request.url);
+  const { filtersApplied, items } = applyQueryFilters(
+    movies as Movie[],
+    request.url
+  );
 
   if (filtersApplied) {
     movies = items;
@@ -32,7 +40,10 @@ export async function loader({ params, request }) {
 }
 
 export default function ListingPage() {
-  const { movies, type } = useLoaderData();
+  const { movies, type } = useLoaderData() as {
+    movies: Movie[];
+    type: { name: string; slug: string };
+  };
 
   return (
     <>
@@ -54,7 +65,7 @@ export function ListingPageError() {
   return (
     <div className="container mx-auto py-10">
       <h1 className="text-3xl font-semibold">Bir hata oluştu</h1>
-      <p className="text-lg mt-4">{error.message}</p>
+      <p className="text-lg mt-4">{(error as unknown as any)?.message}</p>
       <Link to="/">
         <Button asChild>Anasayfaya dön</Button>
       </Link>

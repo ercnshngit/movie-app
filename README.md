@@ -1,3 +1,8 @@
+# Film Sitesi Örnek
+
+![Example Image](./github-images/site.png)
+![Responsive Image](./github-images/responsive.png)
+
 # Good to read
 
 ## Fallback image component

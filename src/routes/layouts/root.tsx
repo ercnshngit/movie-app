@@ -1,6 +1,5 @@
 import Header from "@/components/header";
 import { cn } from "@/lib/utils";
-import React from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 
 export default function RootLayout() {
