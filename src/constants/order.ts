@@ -19,4 +19,9 @@ export const ORDER = [
     slug: "name-desc",
     sort: (a, b) => b.title.localeCompare(a.title),
   },
+  {
+    label: "Rastgele Sırala",
+    slug: "random",
+    sort: (a, b) => true,
+  },
 ];

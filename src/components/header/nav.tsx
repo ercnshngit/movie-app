@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Nav() {
   return (
-    <div className="flex gap-4">
+    <div className="flex  gap-4 flex-wrap items-center justify-center">
       <Button variant="link" className="text-background" asChild>
         <Link to="/">Anasayfa</Link>
       </Button>
